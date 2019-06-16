@@ -1,0 +1,19 @@
+https://wiki.jenkins.io/display/JENKINS/Installing+Jenkins+on+Ubuntu
+https://www.digitalocean.com/community/tutorials/how-to-install-jenkins-on-ubuntu-16-04
+
+If your jenkins is running as service instead of process you should stop it first using
+
+sudo service jenkins stop
+
+After stopping it you can follow the normal flow of removing it using commands respective to your linux flavour
+
+For centos it will be
+sudo yum remove jenkins
+
+For ubuntu it will
+sudo apt-get remove --purge jenkins
+
+if you are ubuntu user than try this:
+
+sudo apt-get remove jenkins
+sudo apt-get remove --auto-remove jenkins   (worked)
