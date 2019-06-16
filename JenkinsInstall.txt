@@ -23,6 +23,7 @@ sudo apt-get remove --auto-remove jenkins   (worked)
 Stackoverflow
 sudo add-apt-repository ppa:webupd8team/java
 sudo apt install oracle-java8-installer
+apt install openjdk-8-jre-headless
 wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
 sudo apt-add-repository "deb https://pkg.jenkins.io/debian-stable binary/"
 sudo apt-get update
