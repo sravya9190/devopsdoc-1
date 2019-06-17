@@ -1,6 +1,28 @@
 https://wiki.jenkins.io/display/JENKINS/Installing+Jenkins+on+Ubuntu
 https://www.digitalocean.com/community/tutorials/how-to-install-jenkins-on-ubuntu-16-04
 
+
+Installation for Jenkins with Java:
+---------------------------------------
+sudo apt-get update
+sudo apt-get install default-jdk -y
+java --version
+sudo chmod 777 /etc/environment
+vim /etc/environment > JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/
+
+----------------------------
+jenkins:
+------------------------------
+wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
+sudo apt-add-repository "deb https://pkg.jenkins.io/debian-stable binary/"
+sudo apt-get update
+sudo apt install jenkins -y
+
+sudo chmod +x /var/lib/jenkins/secrets/initialAdminPassword
+sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+----------------------------------------------------------
+a unique pass word generates: 7ac80fd8e70c443ea1aa26466e98c8e6(do not use this for your installation)
+
 If your jenkins is running as service instead of process you should stop it first using
 
 sudo service jenkins stop
