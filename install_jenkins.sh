@@ -1,7 +1,7 @@
 #Install Java
 sudo apt-get update
 sudo apt-get install default-jdk -y
-echo "JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"" >> /etc/environment
+echo "JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"" >> /etc/environment
 sudo source /etc/environment
 echo $JAVA_HOME
 
