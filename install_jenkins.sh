@@ -13,7 +13,7 @@ sudo wget https://www-eu.apache.org/dist/maven/maven-3/3.6.1/binaries/apache-mav
 sudo tar -xvzf apache-maven-3.6.1-bin.tar.gz
 sudo mv apache-maven-3.6.1 maven
 sudo rm apache-maven-3.6.1-bin.tar.gz
-echo /etc/profile.d/mavenenv.sh > export M2_HOME=/usr/share/maven export PATH=${M2_HOME}/bin:${PATH}
+sudo vim /etc/profile.d/mavenenv.sh > export M2_HOME=/usr/share/maven export PATH=${M2_HOME}/bin:${PATH}
 sudo chmod 777 /etc/profile.d/mavenenv.sh
 source /etc/profile.d/mavenenv.sh
 mvn --version
