@@ -1,0 +1,36 @@
+#Installing Sonarqube
+---------------------------------------------
+
+
+1. sudo adduser --system --no-create-home --group --disabled-login sonarqube
+2. sudo mkdir /opt/sonarqube
+3. sudo chown -R sonarqube:sonarqube /opt/sonarqube     --> changing the permission to sonar qube owner
+4. cd /opt/sonarqube
+5. sudo wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-6.7.5.zip
+6. sudo unzip sonarqube-6.7.5.zip
+	(note: if unzip command is not supporting $sudo apt install unzip)
+7. sudo chown -R sonarqube:sonarqube /opt/sonarqube   --> changing the folder ownership  
+8. sudo vi  /etc/systemd/system/sonarqube.service
+	(note : 
+
+	[Unit]
+	Description=SonarQube service
+	After=syslog.target network.target
+
+	[Service]
+	Type=forking
+
+	ExecStart=/opt/sonarqube/sonarqube-6.7.5/bin/linux-x86-64/sonar.sh start
+	ExecStop=/opt/sonarqube/sonarqube-6.7.5/bin/linux-x86-64/sonar.sh stop
+
+	User=sonarqube
+	Group=sonarqube
+	Restart=always
+
+	[Install]
+	WantedBy=multi-user.target   ) copy and paste 
+
+9.  sudo systemctl start sonarqube.service
+10. sudo systemctl status sonarqube.service
+
+
