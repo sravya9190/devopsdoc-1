@@ -25,6 +25,8 @@ docker kill <containerID>
 docker run -d -p 15672:15672 --hostname my-rabbitmq --name messageQ rabbitmq:3-management
 docker run -p 8080:8080 -v /var/jenkins_home/:/var/jenkins_home/  -d jenkins
  
+Example to try for volume mount: https://dev.to/jibinliu/how-to-persist-data-in-docker-container-2m72
+
 Starting and stoping docker engine service from OS:
 service docker stop  (To check whether the service is running fire a cmd: docker info)
 service docker start (To check whether the service is running fire a cmd: docker info)
