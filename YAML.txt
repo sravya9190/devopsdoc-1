@@ -1,0 +1,40 @@
+http://www.yamllint.com/
+https://learn-the-web.algonquindesign.ca/topics/yaml/#indent-with-spaces
+https://learnxinyminutes.com/docs/yaml/
+https://learn.getgrav.org/advanced/yaml
+
+Sample Format of Yaml file:
+
+# YAML extensions--> .yml or .yaml
+
+# commenting the line of code
+---
+Person:
+  Name: &name "Kiran" # &name is anchor to use it across same document
+  Age: !!float 22 # !!float will forcibly converting integer to float
+  Mobile: 999955550
+  Place: "Bangalore"
+  Pincode: 560076
+  Hobbies:
+   - Watching_Movies
+   - Cricket
+   - Listening_Music
+  Education:
+   UG: "B.Sc Computer Science"
+   PG: "M.C.A"
+   PUC: "MPC"
+  UG_Percentage: 
+   GPA: &UG 9.5
+  PG_Percentage:
+   <<: *UG   # put the value of GPA mapped under UG
+  Details: >
+   Kiran is a Post graduate guy with 3+ years of experience,
+   shifting towards Devops culture and enablement of 
+   tools in CI & CD
+  Profile: |
+   *name M.C.A
+   Sr Software Engineer
+   Softgen Infotech
+      
+
+...
