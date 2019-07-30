@@ -38,3 +38,36 @@ Person:
       
 
 ...
+
+person: 
+  age: 28
+  location: Bangalore
+  name: &name Sandeep # &name is anchor to use it across same document
+  native: Hyderabad
+  occupation: "software engineer"
+  hobbies:  # hobbies with list of arrays with symbol -
+    - cricket
+    - badminton
+    - table tennis
+    - hockey
+  movies: ["Xmen", "spiderman", "Avengers"]
+  profile: > # Symbol > is used collapse the below multiple lines into single line.
+    Sandeep is a person from Hyderabad, his native language is Telugu.
+    He completed his graduation in 2012 and working as a software engineer.
+    He is married & living in Bangalore.
+  signature: | # Symbol | is used to preserve the format of signature as it is.
+    Sandeep Reddy 
+     Software Engineer- B.Tech
+     Bangalore
+  certified: "Azure & AWS" # double quotes are used here to escape the symbol &.
+  authenticated_person: *name  # *name will retrieve value from &name marked at the top
+  years_of_studies:
+    sslc: &yr 10
+    puc: 2
+    ug: 4
+    pg: 2
+  total_sslc:
+    <<: *yr 
+    
+  
+
