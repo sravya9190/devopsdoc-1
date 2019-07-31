@@ -1,7 +1,9 @@
 #Install Java
 sudo apt-get update
 sudo apt install openjdk-8-jdk -y
+sudo chmod o+w  /etc/environment
 echo JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64" >> /etc/environment
+sudo chmod o-w  /etc/environment
 sudo source /etc/environment
 echo $JAVA_HOME
 
@@ -13,9 +15,12 @@ sudo wget https://www-eu.apache.org/dist/maven/maven-3/3.6.1/binaries/apache-mav
 sudo tar -xvzf apache-maven-3.6.1-bin.tar.gz
 sudo mv apache-maven-3.6.1 maven
 sudo rm apache-maven-3.6.1-bin.tar.gz
-sudo vim /etc/profile.d/mavenenv.sh > export M2_HOME=/opt/maven export PATH=${M2_HOME}/bin:${PATH}
-sudo chmod +x /etc/profile.d/mavenenv.sh
+sudo touch /etc/profile.d/mavenenv.sh
+sudo chmod o+w /etc/profile.d/mavenenv.sh
+echo export M2_HOME=/opt/maven export PATH=${M2_HOME}/bin:${PATH} > /etc/profile.d/mavenenv.sh
+sudo chmod ugo+x,o-w /etc/profile.d/mavenenv.sh
 source /etc/profile.d/mavenenv.sh
+sudo apt install maven -y
 mvn --version
 
 
