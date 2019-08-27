@@ -20,7 +20,7 @@ sudo chmod o+w /etc/profile.d/mavenenv.sh
 echo export M2_HOME=/opt/maven export PATH=${M2_HOME}/bin:${PATH} > /etc/profile.d/mavenenv.sh
 sudo chmod ugo+x,o-w /etc/profile.d/mavenenv.sh
 source /etc/profile.d/mavenenv.sh
-sudo apt install maven -y
+
 mvn --version
 
 
